@@ -72,6 +72,8 @@ npx hardhat compile
 npx hardhat run scripts/deploy.js --network sepolia
 ```
 
+![](deploy.jpg)
+
 ### Interact with the Contract
 
 Start the Hardhat console and attach to the deployed contract:
