@@ -5,6 +5,8 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract AITU2329 is ERC20, Ownable {
+    uint256 public initialValue; // New state variable
+
     event TransactionDetails(
         address indexed sender,
         address indexed receiver,
@@ -12,8 +14,11 @@ contract AITU2329 is ERC20, Ownable {
         uint256 blockTimestamp
     );
 
-    constructor(address initialOwner) ERC20("AITU2329", "AITU") Ownable(initialOwner) {
-        _mint(initialOwner, 7700 * 10 ** decimals()); 
+    // Modify the constructor to accept an initial value and owner address
+    constructor(address initialOwner, uint256 _initialValue) ERC20("AITU2329", "AITU") Ownable(initialOwner) {
+        transferOwnership(initialOwner); // Transfer ownership to the specified initial owner
+        _mint(initialOwner, _initialValue * 10 ** decimals());  // Mint initial value tokens
+        initialValue = _initialValue;  // Initialize the state variable
     }
 
     function getTransactionDetails(
