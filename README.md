@@ -9,6 +9,10 @@ This repository contains the BT3 project, which focuses on blockchain-based fina
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Contracts](#contracts)
+- [Scripts](#scripts)
+- [Tests](#tests)
+- [Deployment Output](#deployment-output)
 - [Examples](#examples)
 - [License](#license)
 
@@ -20,7 +24,7 @@ The BT3 project involves the creation of an ERC-20-compliant token with enhanced
 
 - **ERC-20 Compliance:** Implements standard token functions such as `transfer`, `balanceOf`, and `approve`.
 - **Initial Token Supply:** Mints 7700 tokens to the deployer's address upon contract deployment.
-- **Advanced Transaction Tracking:** 
+- **Advanced Transaction Tracking:**
   - Access block timestamps in a readable format for the latest transactions.
   - Retrieve sender and receiver addresses for specific transactions.
 
@@ -110,6 +114,53 @@ const token = await AITU2329.attach(contractAddress);
   
   ![](pc1.png)
 
+## Contracts
+
+### AITU2329.sol
+This is the main ERC-20 smart contract implementing additional transaction tracking features.
+- Functions include:
+  - `getLatestTransactionTimestamp()`
+  - `getTransactionSender()`
+  - `getTransactionReceiver()`
+
+### AITU2329modif.sol
+Modified version of `AITU2329.sol` with added functionality for transaction event emissions and initial supply customization.
+
+## Scripts
+
+### `scripts/deploy.js`
+The deployment script utilizes Hardhat to deploy the contract on the Sepolia testnet.
+- Loads environment variables from `.env`
+- Uses `hre.ethers.getSigners()` to retrieve deployer details
+- Deploys `AITU2329` contract
+- Outputs contract address upon successful deployment
+
+## Tests
+
+### `test/AITU2329.js`
+Unit tests for the `AITU2329` contract, including:
+- Checking initial supply
+- Validating event emissions (`TransactionDetails`)
+- Retrieving latest transaction timestamp
+- Getting sender and receiver details
+
+### `test/AITU2329modif.js`
+Modified tests for `AITU2329modif` contract with additional initial supply verification.
+
+## Deployment Output
+
+The output from the deployment script is shown in `output.jpg`:
+
+![](output.jpg)
+
+### Key Details:
+- **Deployer Address:** Shown in the output log.
+- **Transaction Hash:** Contains the transaction ID of the deployment.
+- **Contract Address:** Displays the address of the deployed smart contract.
+- **Gas Used:** Indicates the amount of gas consumed during deployment.
+- **Block Confirmation:** Shows the block number where the contract was deployed.
+- **Deployment Success Message:** Confirms successful deployment.
+
 ## Examples
 
 ### Deploying the Contract
@@ -130,4 +181,5 @@ console.log("Token Balance:", balance.toString());
 ![](token.png)
 
 ## License
-This project is licensed under the MIT License. See the [LICENSE](LICENCE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
