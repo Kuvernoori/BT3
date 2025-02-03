@@ -60,7 +60,6 @@ Ensure the following dependencies are installed before starting:
       url: process.env.QUICKNODE_URL,
       accounts: [process.env.PRIVATE_KEY],
     ```
-    ![](meta.png)
 
 ## Usage
 
@@ -76,7 +75,6 @@ npx hardhat compile
 npx hardhat run scripts/deploy.js --network sepolia
 ```
 
-![](deploy.jpg)
 
 ### Interact with the Contract
 
@@ -112,7 +110,6 @@ const token = await AITU2329.attach(contractAddress);
   console.log("Transaction Receiver:", receiver);
   ```
   
-  ![](pc1.png)
 
 ## Contracts
 
