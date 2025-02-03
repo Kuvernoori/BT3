@@ -50,13 +50,13 @@ Ensure the following dependencies are installed before starting:
    ```
 
 3. Set up environment variables:
-
-   Create a `.env` file in the root directory and add the following:
-
-   ```env
-   QUICKNODE_URL=your_quicknode_url_here
-   PRIVATE_KEY=your_private_key_here
-   ```
+   
+    Create a `.env` file in the root directory and add the following:
+    ```
+      url: process.env.QUICKNODE_URL,
+      accounts: [process.env.PRIVATE_KEY],
+    ```
+    ![](meta.png)
 
 ## Usage
 
