@@ -107,6 +107,8 @@ const token = await AITU2329.attach(contractAddress);
   const receiver = await token.getTransactionReceiver("0xReceiverAddress");
   console.log("Transaction Receiver:", receiver);
   ```
+  
+      ![](pc1.png)
 
 ## Examples
 
