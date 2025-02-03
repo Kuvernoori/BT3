@@ -118,6 +118,8 @@ const token = await AITU2329.attach(contractAddress);
 npx hardhat run scripts/deploy.js --network sepolia
 ```
 
+![](address.png)
+
 ### Checking Token Balance
 
 ```javascript
@@ -125,6 +127,7 @@ const balance = await token.balanceOf("0xYourWalletAddress");
 console.log("Token Balance:", balance.toString());
 ```
 
+![](token.png)
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
