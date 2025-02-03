@@ -4,7 +4,8 @@ pragma solidity ^0.8.20;
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract AITU2329 is ERC20, Ownable {
+contract AITU2329modif is ERC20, Ownable {
+    uint256 public initialValue; 
 
     event TransactionDetails(
         address indexed sender,
@@ -13,10 +14,10 @@ contract AITU2329 is ERC20, Ownable {
         uint256 blockTimestamp
     );
 
-    constructor(address initialOwner) ERC20("AITU2329", "AITU") Ownable(initialOwner) {
+    constructor(address initialOwner, uint256 _initialValue) ERC20("AITU2329modif", "AITUmodif") Ownable(initialOwner) {
         transferOwnership(initialOwner); 
-        uint256 initialSupply = 10000 * 10 ** decimals(); 
-        _mint(initialOwner, initialSupply);
+        _mint(initialOwner, _initialValue * 10 ** decimals());  
+        initialValue = _initialValue;  
     }
 
     function getTransactionDetails(
