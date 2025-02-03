@@ -161,25 +161,6 @@ The output from the deployment script is shown in `output.jpg`:
 - **Block Confirmation:** Shows the block number where the contract was deployed.
 - **Deployment Success Message:** Confirms successful deployment.
 
-## Examples
-
-### Deploying the Contract
-
-```sh
-npx hardhat run scripts/deploy.js --network sepolia
-```
-
-![](address.png)
-
-### Checking Token Balance
-
-```javascript
-const balance = await token.balanceOf("0xYourWalletAddress");
-console.log("Token Balance:", balance.toString());
-```
-
-![](token.png)
-
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
