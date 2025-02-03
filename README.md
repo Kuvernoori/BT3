@@ -128,6 +128,6 @@ console.log("Token Balance:", balance.toString());
 ```
 
 ![](token.png)
-## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENCE) file for details.
