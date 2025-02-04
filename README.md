@@ -159,5 +159,4 @@ The output from the deployment script is shown in `output.jpg`:
 - **Deployment Success Message:** Confirms successful deployment.
 
 ## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
+This project is licensed under the MIT License. See the [LICENSE](LICENCE) file for details.
